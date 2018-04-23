@@ -8,9 +8,9 @@ In your Xcode project, pull from develop.
 
 Open terminal (Command + Space, then search for "terminal").
 
-cd into the same directory as where your code for Cheers is stored.
+cd into the same directory as where your code for USDToday is stored.
 
-For example, if my code is on the Desktop, then I'll need to use cd Desktop/Cheers.
+For example, if my code is on the Desktop, then I'll need to use cd Desktop/USDToday.
 
 Use the following commands to install CocoaPods:
 
@@ -22,7 +22,7 @@ pod install
 
 Once the installation has finished, quit Xcode.
 
-Open Cheers in Finder. In your Cheers folder you should see two Xcode files, a blue one that ends in .xcodeproj and a white one that ends in .xcworkspace. Double click on the white .xcworkspace file to open the project (you'll have to use white icon from now on).
+Open USDToday in Finder. In your USDToday folder you should see two Xcode files, a blue one that ends in .xcodeproj and a white one that ends in .xcworkspace. Double click on the white .xcworkspace file to open the project (you'll have to use white icon from now on).
 
 Command + R to build and run!
 
