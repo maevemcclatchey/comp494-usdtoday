@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		666A2CB52097BFCB006CA09A /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666A2CB42097BFCB006CA09A /* EventCell.swift */; };
+		6675274E209A6063001132AA /* USDCalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675274D209A6063001132AA /* USDCalendarController.swift */; };
+		66752750209A6078001132AA /* MyCalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675274F209A6078001132AA /* MyCalendarController.swift */; };
+		66752757209A614C001132AA /* UsdDayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66752755209A614B001132AA /* UsdDayController.swift */; };
+		66752758209A614C001132AA /* MyDayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66752756209A614B001132AA /* MyDayController.swift */; };
+		6675275A209A61F1001132AA /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66752759209A61F1001132AA /* EventDetailController.swift */; };
+		6675275C209A621E001132AA /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675275B209A621E001132AA /* SettingsController.swift */; };
 		66B89E1B208E7BD000327100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B89E1A208E7BD000327100 /* AppDelegate.swift */; };
 		66B89E1D208E7BD000327100 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B89E1C208E7BD000327100 /* ViewController.swift */; };
 		66B89E20208E7BD000327100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B89E1E208E7BD000327100 /* Main.storyboard */; };
@@ -36,6 +42,12 @@
 
 /* Begin PBXFileReference section */
 		666A2CB42097BFCB006CA09A /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		6675274D209A6063001132AA /* USDCalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USDCalendarController.swift; sourceTree = "<group>"; };
+		6675274F209A6078001132AA /* MyCalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalendarController.swift; sourceTree = "<group>"; };
+		66752755209A614B001132AA /* UsdDayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UsdDayController.swift; path = /Users/maevemcclatchey/Desktop/USDToday/USDToday/UsdDayController.swift; sourceTree = "<absolute>"; };
+		66752756209A614B001132AA /* MyDayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyDayController.swift; path = /Users/maevemcclatchey/Desktop/USDToday/USDToday/MyDayController.swift; sourceTree = "<absolute>"; };
+		66752759209A61F1001132AA /* EventDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
+		6675275B209A621E001132AA /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		66B89E17208E7BD000327100 /* USDToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = USDToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B89E1A208E7BD000327100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66B89E1C208E7BD000327100 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,9 +111,15 @@
 		66B89E19208E7BD000327100 /* USDToday */ = {
 			isa = PBXGroup;
 			children = (
+				66752755209A614B001132AA /* UsdDayController.swift */,
+				66752756209A614B001132AA /* MyDayController.swift */,
 				66B89E1A208E7BD000327100 /* AppDelegate.swift */,
 				66B89E1C208E7BD000327100 /* ViewController.swift */,
 				66B89E1E208E7BD000327100 /* Main.storyboard */,
+				6675275B209A621E001132AA /* SettingsController.swift */,
+				66752759209A61F1001132AA /* EventDetailController.swift */,
+				6675274D209A6063001132AA /* USDCalendarController.swift */,
+				6675274F209A6078001132AA /* MyCalendarController.swift */,
 				666A2CB42097BFCB006CA09A /* EventCell.swift */,
 				66B89E21208E7BD000327100 /* Assets.xcassets */,
 				66B89E23208E7BD000327100 /* LaunchScreen.storyboard */,
@@ -262,9 +280,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6675275C209A621E001132AA /* SettingsController.swift in Sources */,
+				6675274E209A6063001132AA /* USDCalendarController.swift in Sources */,
 				66B89E1D208E7BD000327100 /* ViewController.swift in Sources */,
+				66752750209A6078001132AA /* MyCalendarController.swift in Sources */,
 				666A2CB52097BFCB006CA09A /* EventCell.swift in Sources */,
 				66B89E1B208E7BD000327100 /* AppDelegate.swift in Sources */,
+				66752758209A614C001132AA /* MyDayController.swift in Sources */,
+				66752757209A614C001132AA /* UsdDayController.swift in Sources */,
+				6675275A209A61F1001132AA /* EventDetailController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

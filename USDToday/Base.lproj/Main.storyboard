@@ -13,24 +13,39 @@
         <!--USD Calendar-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="USD Calendar" id="BYZ-38-t0r" customClass="ViewController" customModule="USDToday" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="USD Calendar" id="BYZ-38-t0r" customClass="USDCalendarController" customModule="USDToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-iW-kOn">
-                                <rect key="frame" x="191" y="232" width="46" height="30"/>
+                                <rect key="frame" x="82" y="272" width="46" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Day"/>
+                                <state key="normal" title="Day1"/>
                                 <connections>
                                     <segue destination="9ag-XK-cuv" kind="show" identifier="usdSegue" id="FpH-iW-AIe"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDj-RO-Q6I">
+                                <rect key="frame" x="271" y="272" width="46" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Day3"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18W-nq-UCK">
+                                <rect key="frame" x="164" y="272" width="46" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Day2"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.6116139666" blue="0.43761859190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="USD Calendar" id="N3d-fg-zhg"/>
+                    <connections>
+                        <outlet property="day1Button" destination="r3m-iW-kOn" id="JcP-5E-Ojq"/>
+                        <outlet property="day2Button" destination="18W-nq-UCK" id="kKd-Ta-fXl"/>
+                        <outlet property="day3Button" destination="QDj-RO-Q6I" id="Sgt-IF-JE3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,7 +54,7 @@
         <!--USD Today-->
         <scene sceneID="edW-57-g9k">
             <objects>
-                <viewController title="USD Today" id="9ag-XK-cuv" sceneMemberID="viewController">
+                <viewController title="USD Today" id="9ag-XK-cuv" customClass="UsdDayController" customModule="USDToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2SJ-L2-Sy5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,12 +113,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfF-tF-ro8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="608.54572713643188"/>
+            <point key="canvasLocation" x="1220" y="623"/>
         </scene>
         <!--My Day-->
         <scene sceneID="Mph-JJ-LeF">
             <objects>
-                <viewController title="My Day" id="447-BC-N2E" sceneMemberID="viewController">
+                <viewController title="My Day" id="447-BC-N2E" customClass="MyDayController" customModule="USDToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ViY-jC-CKF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,7 +174,7 @@
         <!--EventDetail-->
         <scene sceneID="t0Z-kI-d7i">
             <objects>
-                <viewController title="EventDetail" id="WP1-UT-yQa" sceneMemberID="viewController">
+                <viewController title="EventDetail" id="WP1-UT-yQa" customClass="EventDetailController" customModule="USDToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IHd-Ci-D0P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,20 +205,34 @@
         <!--My Calendar-->
         <scene sceneID="LxQ-vq-coB">
             <objects>
-                <viewController title="My Calendar" id="NUo-bu-Xsg" sceneMemberID="viewController">
+                <viewController title="My Calendar" id="NUo-bu-Xsg" customClass="MyCalendarController" customModule="USDToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hCX-aJ-GIC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcz-WV-7on">
-                                <rect key="frame" x="167" y="233" width="69" height="30"/>
+                                <rect key="frame" x="78" y="279" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Day">
+                                <state key="normal" title="Day1">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="447-BC-N2E" kind="show" identifier="mySegue" id="qQY-pa-DtN"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEJ-hO-Qfg">
+                                <rect key="frame" x="265" y="279" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Day3">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kao-Uo-0GY">
+                                <rect key="frame" x="169" y="279" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Day2">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -218,7 +247,7 @@
         <!--Settings-->
         <scene sceneID="Jn7-TG-nVj">
             <objects>
-                <viewController title="Settings" id="bUg-5K-7k1" sceneMemberID="viewController">
+                <viewController title="Settings" id="bUg-5K-7k1" customClass="SettingsController" customModule="USDToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ots-1D-Z6w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -283,6 +312,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gtZ-2I-C9m" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D1d-ny-h5l">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
