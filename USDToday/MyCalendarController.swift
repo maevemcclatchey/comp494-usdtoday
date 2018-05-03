@@ -11,6 +11,10 @@ import UIKit
 
 class MyCalendarController: UIViewController {
     
+    var daySelected = ""
+    
+    @IBOutlet weak var day1Button: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,8 +28,18 @@ class MyCalendarController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mySegue"{
             let selectedDay = segue.destination as! MyDayController
-            selectedDay.title = "" // TODO: set title to selected day
+            selectedDay.navigationItem.title = daySelected
         }
     }
+    @IBAction func day1ButtonPressed(_ sender: Any) {
+        daySelected = "Day 1"
+    }
+    @IBAction func day2ButtonPressed(_ sender: Any) {
+        daySelected = "Day 2"
+    }
+    @IBAction func day3ButtonPressed(_ sender: Any) {
+        daySelected = "Day 3"
+    }
+    
     
 }

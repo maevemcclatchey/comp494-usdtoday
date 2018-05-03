@@ -18,23 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-iW-kOn">
-                                <rect key="frame" x="82" y="272" width="46" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Day1"/>
-                                <connections>
-                                    <segue destination="9ag-XK-cuv" kind="show" identifier="usdSegue" id="FpH-iW-AIe"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDj-RO-Q6I">
                                 <rect key="frame" x="271" y="272" width="46" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Day3"/>
+                                <connections>
+                                    <action selector="day2ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Lu-PQ-Kj0"/>
+                                    <action selector="day3ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oiw-To-ZBN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18W-nq-UCK">
                                 <rect key="frame" x="164" y="272" width="46" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Day2"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-iW-kOn">
+                                <rect key="frame" x="77" y="281" width="43" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Day1"/>
+                                <connections>
+                                    <action selector="day1ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yXN-A7-kAf"/>
+                                    <segue destination="9ag-XK-cuv" kind="show" identifier="usdSegue" id="FpH-iW-AIe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.6116139666" blue="0.43761859190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -217,6 +222,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="day1ButtonPressed:" destination="NUo-bu-Xsg" eventType="touchUpInside" id="FXt-56-GiV"/>
                                     <segue destination="447-BC-N2E" kind="show" identifier="mySegue" id="qQY-pa-DtN"/>
                                 </connections>
                             </button>
@@ -226,6 +232,9 @@
                                 <state key="normal" title="Day3">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="day3ButtonPressed:" destination="NUo-bu-Xsg" eventType="touchUpInside" id="ZqC-V0-IxL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kao-Uo-0GY">
                                 <rect key="frame" x="169" y="279" width="69" height="30"/>
@@ -233,12 +242,18 @@
                                 <state key="normal" title="Day2">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="day2ButtonPressed:" destination="NUo-bu-Xsg" eventType="touchUpInside" id="ETx-hm-RT9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="2yc-Sy-cVX"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Calendar" id="jHB-Fy-QPQ"/>
+                    <connections>
+                        <outlet property="day1Button" destination="bcz-WV-7on" id="TXD-sP-boU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LM2-PV-De4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,6 +381,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bjG-cS-Yzd"/>
+        <segue reference="SpO-B6-Gmw"/>
     </inferredMetricsTieBreakers>
 </document>

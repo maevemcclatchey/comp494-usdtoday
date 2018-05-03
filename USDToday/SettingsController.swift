@@ -1,14 +1,15 @@
 //
-//  MyDayController.swift
-//  
+//  SettingsController.swift
+//  USDToday
 //
 //  Created by Maeve McClatchey on 5/2/18.
+//  Copyright © 2018 University of San Diego. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class MyDayController: UIViewController {
+class SettingsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +21,5 @@ class MyDayController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MyEventSegue"{
-            let selectedEvent = segue.destination as! EventDetailController
-            selectedEvent.navigationItem.title = "Event" // TODO: set title to selected day
-            
-        }
-    }
+    
 }

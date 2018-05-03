@@ -15,6 +15,7 @@ class USDCalendarController: UIViewController {
     @IBOutlet weak var day1Button: UIButton!
     
     @IBOutlet weak var day2Button: UIButton!
+    var daySelected = ""
     
     @IBOutlet weak var day3Button: UIButton!
     override func viewDidLoad() {
@@ -30,8 +31,17 @@ class USDCalendarController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "usdSegue"{
             let selectedDay = segue.destination as! UsdDayController
-            selectedDay.title = "" // TODO: set title to selected day
+            selectedDay.navigationItem.title = daySelected
         }
+    }
+    @IBAction func day1ButtonPressed(_ sender: Any) {
+        daySelected = "Day 1"
+    }
+    @IBAction func day2ButtonPressed(_ sender: Any) {
+        daySelected = "Day 2"
+    }
+    @IBAction func day3ButtonPressed(_ sender: Any) {
+        daySelected = "Day 3"
     }
     
 }
