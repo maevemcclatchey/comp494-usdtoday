@@ -21,6 +21,7 @@
 		66B89E25208E7BD000327100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B89E23208E7BD000327100 /* LaunchScreen.storyboard */; };
 		66B89E30208E7BD000327100 /* USDTodayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B89E2F208E7BD000327100 /* USDTodayTests.swift */; };
 		66B89E3B208E7BD000327100 /* USDTodayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B89E3A208E7BD000327100 /* USDTodayUITests.swift */; };
+		66FFF563209BD9D300AC7E84 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFF562209BD9D300AC7E84 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		66B89E36208E7BD000327100 /* USDTodayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = USDTodayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B89E3A208E7BD000327100 /* USDTodayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USDTodayUITests.swift; sourceTree = "<group>"; };
 		66B89E3C208E7BD000327100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66FFF562209BD9D300AC7E84 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			children = (
 				66752755209A614B001132AA /* UsdDayController.swift */,
 				66752756209A614B001132AA /* MyDayController.swift */,
+				66FFF562209BD9D300AC7E84 /* Event.swift */,
 				66B89E1A208E7BD000327100 /* AppDelegate.swift */,
 				66B89E1C208E7BD000327100 /* ViewController.swift */,
 				66B89E1E208E7BD000327100 /* Main.storyboard */,
@@ -284,6 +287,7 @@
 				6675274E209A6063001132AA /* USDCalendarController.swift in Sources */,
 				66B89E1D208E7BD000327100 /* ViewController.swift in Sources */,
 				66752750209A6078001132AA /* MyCalendarController.swift in Sources */,
+				66FFF563209BD9D300AC7E84 /* Event.swift in Sources */,
 				666A2CB52097BFCB006CA09A /* EventCell.swift in Sources */,
 				66B89E1B208E7BD000327100 /* AppDelegate.swift in Sources */,
 				66752758209A614C001132AA /* MyDayController.swift in Sources */,

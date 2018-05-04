@@ -18,13 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDj-RO-Q6I">
-                                <rect key="frame" x="271" y="272" width="46" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-iW-kOn">
+                                <rect key="frame" x="77" y="281" width="43" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Day3"/>
+                                <state key="normal" title="Day1"/>
                                 <connections>
-                                    <action selector="day2ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Lu-PQ-Kj0"/>
-                                    <action selector="day3ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oiw-To-ZBN"/>
+                                    <action selector="day1ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yXN-A7-kAf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18W-nq-UCK">
@@ -32,13 +31,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Day2"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-iW-kOn">
-                                <rect key="frame" x="77" y="281" width="43" height="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDj-RO-Q6I">
+                                <rect key="frame" x="271" y="272" width="46" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Day1"/>
+                                <state key="normal" title="Day3"/>
                                 <connections>
-                                    <action selector="day1ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yXN-A7-kAf"/>
-                                    <segue destination="9ag-XK-cuv" kind="show" identifier="usdSegue" id="FpH-iW-AIe"/>
+                                    <action selector="day2ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Lu-PQ-Kj0"/>
+                                    <action selector="day3ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oiw-To-ZBN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -50,6 +49,7 @@
                         <outlet property="day1Button" destination="r3m-iW-kOn" id="JcP-5E-Ojq"/>
                         <outlet property="day2Button" destination="18W-nq-UCK" id="kKd-Ta-fXl"/>
                         <outlet property="day3Button" destination="QDj-RO-Q6I" id="Sgt-IF-JE3"/>
+                        <segue destination="9ag-XK-cuv" kind="show" identifier="usdSegue" id="EXh-ZF-gz6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,23 +75,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKH-TG-J2U">
-                                                    <rect key="frame" x="15" y="0.0" width="239" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6J-vD-QiD">
+                                                    <rect key="frame" x="15" y="11" width="239" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNq-pd-WHN">
-                                                    <rect key="frame" x="326" y="7" width="34" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXy-un-KeL">
+                                                    <rect key="frame" x="15" y="0.0" width="239" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                    <state key="normal" title="+"/>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdC-WB-5Zl">
-                                                    <rect key="frame" x="15" y="22" width="239" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -113,12 +107,13 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="tableView" destination="N6j-V4-wAU" id="r1n-G0-kD0"/>
                         <segue destination="WP1-UT-yQa" kind="show" identifier="USDEventSegue" id="SpO-B6-Gmw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfF-tF-ro8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="623"/>
+            <point key="canvasLocation" x="1220" y="622.93853073463276"/>
         </scene>
         <!--My Day-->
         <scene sceneID="Mph-JJ-LeF">
@@ -169,6 +164,7 @@
                         <viewLayoutGuide key="safeArea" id="T2m-7X-UIJ"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="Sr0-XA-8h8" id="Cnf-Kn-z9h"/>
                         <segue destination="WP1-UT-yQa" kind="show" identifier="MyEventSegue" id="bjG-cS-Yzd"/>
                     </connections>
                 </viewController>
@@ -223,7 +219,6 @@
                                 </state>
                                 <connections>
                                     <action selector="day1ButtonPressed:" destination="NUo-bu-Xsg" eventType="touchUpInside" id="FXt-56-GiV"/>
-                                    <segue destination="447-BC-N2E" kind="show" identifier="mySegue" id="qQY-pa-DtN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEJ-hO-Qfg">
@@ -253,6 +248,7 @@
                     <navigationItem key="navigationItem" title="My Calendar" id="jHB-Fy-QPQ"/>
                     <connections>
                         <outlet property="day1Button" destination="bcz-WV-7on" id="TXD-sP-boU"/>
+                        <segue destination="447-BC-N2E" kind="show" identifier="mySegue" id="Y4a-Lr-XrM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LM2-PV-De4" userLabel="First Responder" sceneMemberID="firstResponder"/>

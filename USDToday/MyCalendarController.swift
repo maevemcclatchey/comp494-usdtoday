@@ -33,12 +33,15 @@ class MyCalendarController: UIViewController {
     }
     @IBAction func day1ButtonPressed(_ sender: Any) {
         daySelected = "Day 1"
+        performSegue(withIdentifier: "mySegue", sender: self)
     }
     @IBAction func day2ButtonPressed(_ sender: Any) {
         daySelected = "Day 2"
+        performSegue(withIdentifier: "mySegue", sender: self)
     }
     @IBAction func day3ButtonPressed(_ sender: Any) {
         daySelected = "Day 3"
+        performSegue(withIdentifier: "mySegue", sender: self)
     }
     
     
