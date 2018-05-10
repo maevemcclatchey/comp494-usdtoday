@@ -34,6 +34,8 @@ class USDCalendarController: UIViewController {
             let selectedDay = segue.destination as! UsdDayController
             selectedDay.navigationItem.title = daySelected
             
+            
+            
         }
     }
     @IBAction func day1ButtonPressed(_ sender: Any) {

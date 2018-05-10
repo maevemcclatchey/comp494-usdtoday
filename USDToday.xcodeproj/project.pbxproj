@@ -22,6 +22,7 @@
 		66B89E30208E7BD000327100 /* USDTodayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B89E2F208E7BD000327100 /* USDTodayTests.swift */; };
 		66B89E3B208E7BD000327100 /* USDTodayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B89E3A208E7BD000327100 /* USDTodayUITests.swift */; };
 		66FFF563209BD9D300AC7E84 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFF562209BD9D300AC7E84 /* Event.swift */; };
+		66FFF59F20A0D90C00AC7E84 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFF59E20A0D90C00AC7E84 /* NewEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		66B89E3A208E7BD000327100 /* USDTodayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USDTodayUITests.swift; sourceTree = "<group>"; };
 		66B89E3C208E7BD000327100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66FFF562209BD9D300AC7E84 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		66FFF59E20A0D90C00AC7E84 /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				66B89E1A208E7BD000327100 /* AppDelegate.swift */,
 				66B89E1C208E7BD000327100 /* ViewController.swift */,
 				66B89E1E208E7BD000327100 /* Main.storyboard */,
+				66FFF59E20A0D90C00AC7E84 /* NewEventViewController.swift */,
 				6675275B209A621E001132AA /* SettingsController.swift */,
 				66752759209A61F1001132AA /* EventDetailController.swift */,
 				6675274D209A6063001132AA /* USDCalendarController.swift */,
@@ -285,6 +288,7 @@
 			files = (
 				6675275C209A621E001132AA /* SettingsController.swift in Sources */,
 				6675274E209A6063001132AA /* USDCalendarController.swift in Sources */,
+				66FFF59F20A0D90C00AC7E84 /* NewEventViewController.swift in Sources */,
 				66B89E1D208E7BD000327100 /* ViewController.swift in Sources */,
 				66752750209A6078001132AA /* MyCalendarController.swift in Sources */,
 				66FFF563209BD9D300AC7E84 /* Event.swift in Sources */,

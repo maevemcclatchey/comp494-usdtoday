@@ -30,6 +30,10 @@ class MyCalendarController: UIViewController {
             let selectedDay = segue.destination as! MyDayController
             selectedDay.navigationItem.title = daySelected
         }
+        if segue.identifier == "addNewEvent"{
+            let dest = segue.destination as! NewEventViewController
+            dest.navigationItem.title = "New Event"
+        }
     }
     @IBAction func day1ButtonPressed(_ sender: Any) {
         daySelected = "Day 1"
@@ -44,5 +48,8 @@ class MyCalendarController: UIViewController {
         performSegue(withIdentifier: "mySegue", sender: self)
     }
     
+    @IBAction func addEventPressed(_ sender: Any) {
+        performSegue(withIdentifier: "addNewEvent", sender: self)
+    }
     
 }
