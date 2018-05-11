@@ -13,6 +13,11 @@ class NewEventViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     let eventTypes = ["Campus Event","Meeting", "Presentation/Talk", "Greek Life","Other"]
     
+    @IBOutlet weak var eventTypePicker: UIPickerView!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -55,6 +60,29 @@ class NewEventViewController: UITableViewController, UIPickerViewDelegate, UIPic
         return 1
     }
 
+    @IBAction func saveButtonPressed(){
+       // let newEvent = Event(title: titleTextField, description: descriptionTextField, isInMyCalendar: true, date: datePicker)
+       // Event.saveToFile([newEvent])
+    }
+    
+    /*
+    @IBAction func unwindToEventTableView(segue: UIStoryboard){
+        guard segue.identifier == "saveUnwind" else { return }
+        let sourceViewController = segue.source as! AddEditEventTableViewController
+        
+        if let event = sourceViewController.event{
+            if let selectedIndexPath = tableView.indexPathForSelectedRow{
+                events[selectedIndexPath] = event
+                tableView
+            }
+        }
+        
+    }
+ 
+    */
+    
+    
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

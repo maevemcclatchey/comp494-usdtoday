@@ -389,7 +389,11 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="datePicker" destination="iDk-El-5UR" id="Y1F-61-rSG"/>
+                        <outlet property="descriptionTextField" destination="1XK-bn-Xil" id="uYW-N2-4YM"/>
                         <outlet property="eventPickerView" destination="JAa-Km-3If" id="K5H-md-EAk"/>
+                        <outlet property="eventTypePicker" destination="JAa-Km-3If" id="5nY-JS-IXG"/>
+                        <outlet property="titleTextField" destination="89f-DU-s4e" id="PBQ-xE-Max"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tef-d1-gys" userLabel="First Responder" sceneMemberID="firstResponder"/>
