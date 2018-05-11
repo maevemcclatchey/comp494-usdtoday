@@ -8,17 +8,25 @@
 
 import Foundation
 
-struct Event{
+struct Event: Codable{
     var title: String
     var description: String
     var isInMyCalendar: Bool = false
     var date: [String: String]
     
-//    init() {
-//        title = ""
-//        description = ""
-//        isInMyCalendar = false
-//    }
+    init(title: String, description: String, isInMyCalendar: Bool, date: [String: String]) {
+        self.title = title
+        self.description = description
+        self.isInMyCalendar = isInMyCalendar
+        self.date = date
+    }
+    
+    public func getDummyData() -> [Event] {
+        let events = [Event(title: "Movie Night", description:"Coco", isInMyCalendar: true, date:["May 05":"7:30 pm - 9 pm" ]), Event(title: "Engineering Showcase", description:"Presentations of senior projects completed by Engineering and Computer Science students", isInMyCalendar: true, date:["May 11":"2:30 pm - 5 pm" ])]
+        
+        return events
+    }
 }
+
 
 
