@@ -139,10 +139,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mMN-T9-Nqc">
-                                <rect key="frame" x="318" y="7" width="51" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="hDN-T6-Kzd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="397.5"/>
                                 <subviews>
@@ -228,7 +224,7 @@
                                             </stackView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jan-xc-2MX">
                                                 <rect key="frame" x="0.0" y="20.5" width="375" height="327"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" red="0.8016650673638972" green="0.8016650673638972" blue="0.8016650673638972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GFs-BN-CkV">
                                                     <size key="itemSize" width="50" height="50"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -274,7 +270,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N6j-V4-wAU">
-                                <rect key="frame" x="0.0" y="69" width="375" height="505"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCellIdentifier" id="uRg-rZ-s7H" customClass="EventCell" customModule="USDToday" customModuleProvider="target">
@@ -310,7 +306,6 @@
                             <constraint firstItem="N6j-V4-wAU" firstAttribute="top" secondItem="fmM-wd-ZNi" secondAttribute="top" id="HhF-mI-bW9"/>
                             <constraint firstItem="fmM-wd-ZNi" firstAttribute="trailing" secondItem="N6j-V4-wAU" secondAttribute="trailing" id="lSI-gv-FAh"/>
                             <constraint firstItem="N6j-V4-wAU" firstAttribute="leading" secondItem="fmM-wd-ZNi" secondAttribute="leading" id="lcU-dT-KFm"/>
-                            <constraint firstItem="N6j-V4-wAU" firstAttribute="top" secondItem="fmM-wd-ZNi" secondAttribute="top" constant="5" id="rQ8-WW-6g1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fmM-wd-ZNi"/>
                     </view>
@@ -367,7 +362,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="T2m-7X-UIJ" firstAttribute="bottom" secondItem="Sr0-XA-8h8" secondAttribute="bottom" id="5Z8-9b-QSK"/>
-                            <constraint firstItem="Sr0-XA-8h8" firstAttribute="top" secondItem="ViY-jC-CKF" secondAttribute="top" constant="5" id="Npe-Jv-Qb7"/>
                             <constraint firstItem="T2m-7X-UIJ" firstAttribute="trailing" secondItem="Sr0-XA-8h8" secondAttribute="trailing" id="cN1-zN-oPc"/>
                             <constraint firstItem="Sr0-XA-8h8" firstAttribute="top" secondItem="ViY-jC-CKF" secondAttribute="top" id="dKk-SK-Eli"/>
                             <constraint firstItem="Sr0-XA-8h8" firstAttribute="leading" secondItem="ViY-jC-CKF" secondAttribute="leading" id="xX5-nH-T8V"/>
