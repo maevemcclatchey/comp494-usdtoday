@@ -12,7 +12,7 @@ class MyDayController: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     @IBOutlet weak var tableView: UITableView!
     
-    let events = [Event(title: "Movie Night", description:"Coco", isInMyCalendar: true, date:["May 05":"7:30 pm - 9 pm" ])]
+    let events = [Event(title: "Movie Night", description:"Coco", isInMyCalendar: true, date:"May 05 7:30 pm - 9 pm", eventType: "Greek Life")]
     
     //let events = [Event]()
     

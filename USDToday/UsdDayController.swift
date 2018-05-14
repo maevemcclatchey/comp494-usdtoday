@@ -13,7 +13,7 @@ class UsdDayController: ViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
-    let events = [Event(title: "Movie Night", description:"Coco", isInMyCalendar: false, date:["May 05":"7:30 pm - 9 pm" ])]
+    let events = [Event(title: "Movie Night", description:"Coco", isInMyCalendar: false, date:"May 05 7:30 pm - 9 pm", eventType: "Greek Life")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
