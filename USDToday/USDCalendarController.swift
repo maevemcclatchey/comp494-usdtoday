@@ -77,6 +77,12 @@ class USDCalendarController: UIViewController {
         self.month.text = self.formatter.string(from: date)
     }
     
+    func configureCell(view: JTAppleCell?, cellState: CellState) {
+        guard let myCustomCell = view as? CustomCell  else { return }
+        handleCellTextColor(view: myCustomCell, cellState: cellState)
+        handleCellSelected(view: myCustomCell, cellState: cellState)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -104,7 +110,11 @@ class USDCalendarController: UIViewController {
 }
 
 // JTAppleCalendar stuff
-extension ViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
+extension USDCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
+    func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
+        configureCell(view: cell, cellState: cellState)
+    }
+    
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters{
         formatter.dateFormat = "yyyy MM dd"
         formatter.timeZone = Calendar.current.timeZone
@@ -115,17 +125,6 @@ extension ViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDele
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
         return parameters
-    }
-    
-    func configureCell(view: JTAppleCell?, cellState: CellState) {
-        guard let myCustomCell = view as? CustomCell  else { return }
-        handleCellTextColor(view: myCustomCell, cellState: cellState)
-        handleCellSelected(view: myCustomCell, cellState: cellState)
-    }
-    
-    
-    func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
-        configureCell(view: cell, cellState: cellState)
     }
     
     
