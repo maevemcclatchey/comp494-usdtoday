@@ -75,6 +75,11 @@ class MyCalendarController: UIViewController {
         self.month.text = self.formatter.string(from: date)
     }
     
+    func configureCell(view: JTAppleCell?, cellState: CellState) {
+        guard let myCustomCell = view as? CustomCell  else { return }
+        handleCellTextColor(view: myCustomCell, cellState: cellState)
+        handleCellSelected(view: myCustomCell, cellState: cellState)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -109,3 +114,51 @@ class MyCalendarController: UIViewController {
     }
     
 }
+
+// JTAppleCalendar stuff
+extension MyCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
+    func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
+        configureCell(view: cell, cellState: cellState)
+    }
+    
+    func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters{
+        formatter.dateFormat = "yyyy MM dd"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        
+        let startDate = formatter.date(from: "2018 01 01")!
+        let endDate = formatter.date(from: "2019 01 01")!
+        
+        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
+        return parameters
+    }
+    
+    
+    // Display the cell
+    func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
+        let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        
+        cell.dateLabel.text = cellState.text
+        handleCellSelected(view: cell, cellState: cellState)
+        handleCellTextColor(view: cell, cellState: cellState)
+        
+        return cell
+    }
+    
+    // select method
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState){
+        handleCellSelected(view: cell, cellState: cellState)
+        handleCellTextColor(view: cell, cellState: cellState)
+    }
+    
+    // deselect method
+    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState){
+        handleCellSelected(view: cell, cellState: cellState)
+        handleCellTextColor(view: cell, cellState: cellState)
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo){
+        setupViewsOfCalendar(from: visibleDates)
+    }
+}
+
