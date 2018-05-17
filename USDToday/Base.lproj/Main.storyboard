@@ -222,7 +222,7 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tf2-7a-ZvG" customClass="JTAppleCalendarView">
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tf2-7a-ZvG">
                                                         <rect key="frame" x="0.0" y="20.5" width="375" height="327"/>
                                                         <color key="backgroundColor" red="0.80166506739999999" green="0.80166506739999999" blue="0.80166506739999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -281,6 +281,8 @@
                     <navigationItem key="navigationItem" title="USD Calendar" id="OLs-7P-pCa"/>
                     <connections>
                         <outlet property="calendarView" destination="tf2-7a-ZvG" id="GlT-jX-QOM"/>
+                        <outlet property="month" destination="uv2-EG-BZ8" id="J1N-8v-UIW"/>
+                        <outlet property="year" destination="BBN-rw-KCq" id="f5L-UH-jTZ"/>
                         <segue destination="9ag-XK-cuv" kind="show" identifier="usdSegue" id="QA3-6d-0gW"/>
                     </connections>
                 </viewController>
@@ -303,13 +305,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="67.5" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc4-pg-Br3">
-                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5W-N8-Uxt">
-                                                <rect key="frame" x="0.0" y="21" width="67.5" height="29"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="67.5" height="29.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -380,7 +382,7 @@
                                                     <constraint firstAttribute="height" constant="20.5" id="9IC-DG-bl0"/>
                                                 </constraints>
                                             </stackView>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jan-xc-2MX" customClass="JTAppleCalendarView">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jan-xc-2MX">
                                                 <rect key="frame" x="0.0" y="20.5" width="375" height="327"/>
                                                 <color key="backgroundColor" red="0.8016650673638972" green="0.8016650673638972" blue="0.8016650673638972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -430,6 +432,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Calendar" id="uIw-oV-N7Z"/>
                     <connections>
+                        <outlet property="calendarView" destination="jan-xc-2MX" id="GKH-mq-7zQ"/>
+                        <outlet property="month" destination="Y5W-N8-Uxt" id="20o-TF-Cke"/>
+                        <outlet property="year" destination="Xc4-pg-Br3" id="IjY-f9-bnK"/>
                         <segue destination="447-BC-N2E" kind="show" identifier="mySegue" id="uJP-0m-WfA"/>
                         <segue destination="2Qa-jk-gXg" kind="show" identifier="addNewEvent" id="2Sz-UX-hf3"/>
                     </connections>
@@ -687,17 +692,45 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="eJo-vQ-1po" userLabel="Save">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="65" id="8f9-Hy-UmX">
+                                        <rect key="frame" x="0.0" y="650" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8f9-Hy-UmX" id="QLS-TA-gck">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDI-lM-CyY">
+                                                    <rect key="frame" x="144" y="38" width="75" height="30"/>
+                                                    <state key="normal" title="Save"/>
+                                                    <connections>
+                                                        <action selector="saveButtonPressed" destination="2Qa-jk-gXg" eventType="touchUpInside" id="ahd-Hh-hJa"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CDI-lM-CyY" firstAttribute="centerX" secondItem="QLS-TA-gck" secondAttribute="centerX" id="9fl-bX-EbO"/>
+                                                <constraint firstItem="CDI-lM-CyY" firstAttribute="centerY" secondItem="QLS-TA-gck" secondAttribute="centerY" id="hCm-PC-7rO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="2Qa-jk-gXg" id="lPf-Qi-G2q"/>
                             <outlet property="delegate" destination="2Qa-jk-gXg" id="wFF-tA-LxW"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="datePicker" destination="iDk-El-5UR" id="Y1F-61-rSG"/>
                         <outlet property="descriptionTextField" destination="1XK-bn-Xil" id="uYW-N2-4YM"/>
                         <outlet property="eventPickerView" destination="JAa-Km-3If" id="K5H-md-EAk"/>
                         <outlet property="eventTypePicker" destination="JAa-Km-3If" id="5nY-JS-IXG"/>
+                        <outlet property="saveButton" destination="CDI-lM-CyY" id="sz9-Wb-3B2"/>
                         <outlet property="titleTextField" destination="89f-DU-s4e" id="PBQ-xE-Max"/>
                     </connections>
                 </tableViewController>

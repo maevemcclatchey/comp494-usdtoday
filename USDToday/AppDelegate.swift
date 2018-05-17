@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let events = [Event(title: "Movie Night", description:"Coco", isInMyCalendar: true, date:"May 05 7:30 pm - 9 pm", eventType: "Greek Life"), Event(title: "Engineering Showcase", description:"Presentations of senior projects completed by Engineering and Computer Science students", isInMyCalendar: true, date:"May 11 2:30 pm - 5 pm", eventType: "Academics"), Event(title: "CS Showcase", description: "Senior Project Presentations", isInMyCalendar: true, date:"May 11 2:30pm - 5:30pm", eventType: "Academic")]
+        
+        for event in events {
+            if EventsSingleton.shared.eventsList.isEmpty{
+                EventsSingleton.shared.update(event: event, isInMyCalendar: false)
+            }
+        }
+        
         return true
     }
 

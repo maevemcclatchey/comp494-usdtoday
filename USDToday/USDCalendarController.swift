@@ -11,6 +11,8 @@ import UIKit
 import JTAppleCalendar
 
 class USDCalendarController: UIViewController {
+    
+    
     var daySelected = ""
     @IBOutlet weak var day1Button: UIButton!
     
@@ -36,8 +38,8 @@ class USDCalendarController: UIViewController {
     
     func setUpCalendarView(){
         // set up calendar spacing
-        calendarView.minimumLineSpacing = 0
-        calendarView.minimumInteritemSpacing = 0
+       // calendarView.minimumLineSpacing = 0
+      //  calendarView.minimumInteritemSpacing = 0
         
         // set up labels
         calendarView.visibleDates{ (visibleDates) in

@@ -8,12 +8,14 @@
 
 import Foundation
 
-struct Event: Codable{
+struct Event: Codable, Equatable{
     var title: String
     var description: String
     var isInMyCalendar: Bool = false
     var date: String
     var eventType: String
+    
+    
     
     init(title: String, description: String, isInMyCalendar: Bool, date: String, eventType: String) {
         self.title = title
@@ -21,6 +23,10 @@ struct Event: Codable{
         self.isInMyCalendar = isInMyCalendar
         self.date = date
         self.eventType = eventType
+    }
+    
+    public static func ==(lhs: Event, rhs: Event) -> Bool {
+        return lhs.title == rhs.title
     }
     
     public func getDummyData() -> [Event] {

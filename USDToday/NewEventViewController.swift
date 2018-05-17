@@ -6,7 +6,9 @@
 //  Copyright © 2018 University of San Diego. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import JTAppleCalendar
 
 
 class NewEventViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -18,6 +20,13 @@ class NewEventViewController: UITableViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var descriptionTextField: UITextField!
     
+    var selectedEventType: String = ""
+    var selectedDate: String = ""
+    
+    let formatter = DateFormatter()
+   
+    @IBOutlet weak var saveButton: UIButton!
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -27,6 +36,19 @@ class NewEventViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return eventTypes[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == datePicker {
+            datePicker.date = Date().addingTimeInterval(24*60*60)
+            selectedDate = formatter.string(from: datePicker.date)
+            
+            //formatter.dateFormat = "yyyy MM dd"
+            //selectedDate = formatter.date(from: selectedDate)
+            
+        }
+        else if pickerView == eventPickerView {
+            selectedEventType = eventTypes[row]
+        }
     }
     
 
@@ -41,6 +63,7 @@ class NewEventViewController: UITableViewController, UIPickerViewDelegate, UIPic
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,8 +84,13 @@ class NewEventViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
 
     @IBAction func saveButtonPressed(){
-       // let newEvent = Event(title: titleTextField, description: descriptionTextField, isInMyCalendar: true, date: datePicker)
-       // Event.saveToFile([newEvent])
+        let newEvent = Event(title: titleTextField.text!, description: descriptionTextField.text!, isInMyCalendar: true, date: selectedDate, eventType: selectedEventType)
+        if EventsSingleton.shared.eventsList.contains(newEvent) {
+            EventsSingleton.shared.update(event: newEvent, isInMyCalendar: false)
+        } else {
+            EventsSingleton.shared.update(event: newEvent, isInMyCalendar: false)
+        }
+        
     }
     
     /*
