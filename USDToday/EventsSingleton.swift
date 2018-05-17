@@ -12,7 +12,7 @@ public class EventsSingleton: Codable {
     static let shared = EventsSingleton()
     
     
-    var eventsList: [Event] = []
+   // var eventsList: [Event] = []
     
     private let documentsDirectory: URL
     private let archiveURL: URL
@@ -40,6 +40,7 @@ public class EventsSingleton: Codable {
             }
         } else {
             eventsList.append(event)
+            
             saveToFile()
         }
     }
