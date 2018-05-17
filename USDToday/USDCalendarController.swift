@@ -20,6 +20,7 @@ class USDCalendarController: UIViewController {
     
     let formatter = DateFormatter()
     @IBOutlet weak var calendarView: JTAppleCalendarView!
+    
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var month: UILabel!
     

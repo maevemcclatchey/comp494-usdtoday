@@ -33,11 +33,11 @@ class MyCalendarController: UIViewController {
     
     func setUpCalendarView(){
         // set up calendar spacing
-        calendarView.minimumLineSpacing = 0
-        calendarView.minimumInteritemSpacing = 0
+        calendarView?.minimumLineSpacing = 0
+        calendarView?.minimumInteritemSpacing = 0
         
         // set up labels
-        calendarView.visibleDates{ (visibleDates) in
+        calendarView?.visibleDates{ (visibleDates) in
             self.setupViewsOfCalendar(from: visibleDates)
         }
     }
