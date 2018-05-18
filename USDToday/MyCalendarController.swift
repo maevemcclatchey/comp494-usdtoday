@@ -17,7 +17,7 @@ class MyCalendarController: UIViewController {
     @IBOutlet weak var day1Button: UIButton!
     
     let formatter = DateFormatter()
-    @IBOutlet weak var calendarView: JTAppleCalendarView!
+    //@IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var month: UILabel!
     
@@ -28,9 +28,9 @@ class MyCalendarController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpCalendarView()
+       // setUpCalendarView()
     }
-    
+    /*
     func setUpCalendarView(){
         // set up calendar spacing
         calendarView?.minimumLineSpacing = 0
@@ -80,7 +80,7 @@ class MyCalendarController: UIViewController {
         handleCellTextColor(view: myCustomCell, cellState: cellState)
         handleCellSelected(view: myCustomCell, cellState: cellState)
     }
-    
+    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -118,7 +118,7 @@ class MyCalendarController: UIViewController {
 // JTAppleCalendar stuff
 extension MyCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
-        configureCell(view: cell, cellState: cellState)
+        //configureCell(view: cell, cellState: cellState)
     }
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters{
@@ -139,12 +139,12 @@ extension MyCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarVi
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
         
         cell.dateLabel.text = cellState.text
-        handleCellSelected(view: cell, cellState: cellState)
-        handleCellTextColor(view: cell, cellState: cellState)
+        //handleCellSelected(view: cell, cellState: cellState)
+        //handleCellTextColor(view: cell, cellState: cellState)
         
         return cell
     }
-    
+    /*
     // select method
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState){
         handleCellSelected(view: cell, cellState: cellState)
@@ -160,5 +160,6 @@ extension MyCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarVi
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo){
         setupViewsOfCalendar(from: visibleDates)
     }
+ */
 }
 
