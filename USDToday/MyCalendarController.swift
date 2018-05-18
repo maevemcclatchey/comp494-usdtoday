@@ -138,14 +138,12 @@ extension MyCalendarController: JTAppleCalendarViewDelegate {
     
     // select method
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState){
-        handleCellSelected(view: cell, cellState: cellState)
-        handleCellTextColor(view: cell, cellState: cellState)
+        configureCell(view: cell, cellState: cellState)
     }
     
     // deselect method
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState){
-        handleCellSelected(view: cell, cellState: cellState)
-        handleCellTextColor(view: cell, cellState: cellState)
+        configureCell(view: cell, cellState: cellState)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo){

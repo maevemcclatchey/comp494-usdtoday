@@ -90,10 +90,20 @@ class NewEventViewController: UITableViewController, UIPickerViewDelegate, UIPic
         } else {
             EventsSingleton.shared.update(event: newEvent, isInMyCalendar: false)
         }
-        
-        
     }
     
+    //@IBAction func cancelButtonPressed(){
+    //    _ = navigationController?.popViewController(animated: true)
+    //}
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "unwindToUSD"{
+            // add code
+        }
+        if segue.identifier == "unwindToMy"{
+            // add code
+        }
+    }
     /*
     @IBAction func unwindToEventTableView(segue: UIStoryboard){
         guard segue.identifier == "saveUnwind" else { return }

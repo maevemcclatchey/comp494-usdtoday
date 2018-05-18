@@ -19,7 +19,7 @@ class USDCalendarController: UIViewController {
     
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var month: UILabel!
-    
+
     // dark blue #123b7c  #003B6F
     // light blue #0074C8
     let outsideMonthColor = UIColor.gray
@@ -96,13 +96,14 @@ class USDCalendarController: UIViewController {
             let selectedDay = segue.destination as! UsdDayController
             selectedDay.navigationItem.title = daySelected
         }
-        if segue.identifier == "MasterSegue" {
-            // let destination
-            _ = segue.destination as! MasterTableViewController
+        if segue.identifier == "addNewEvent"{
+            let dest = segue.destination as! NewEventViewController
+            dest.navigationItem.title = "New Event"
         }
+        //if segue.identifier == "MasterSegue" {
+         //   let destination = segue.destination as! MasterTableViewController
+        //}
     }
-    
-    
 }
 
 // JTAppleCalendar stuff
@@ -138,14 +139,12 @@ extension USDCalendarController: JTAppleCalendarViewDelegate {
     
     // select method
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState){
-        handleCellSelected(view: cell, cellState: cellState)
-        handleCellTextColor(view: cell, cellState: cellState)
+        configureCell(view: cell, cellState: cellState)
     }
     
     // deselect method
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState){
-        handleCellSelected(view: cell, cellState: cellState)
-        handleCellTextColor(view: cell, cellState: cellState)
+        configureCell(view: cell, cellState: cellState)
     }
  
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo){
