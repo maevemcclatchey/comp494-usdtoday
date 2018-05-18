@@ -148,7 +148,5 @@ extension MyCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarVi
  
 }
 
-// dark blue #123b7c  #003B6F
 
-// light blue #0074C8
 

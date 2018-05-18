@@ -87,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="228" y="562"/>
         </scene>
-        <!--USDCalendarView-->
+        <!--Ib Calendar Data Source-->
         <scene sceneID="l7C-vi-KZ3">
             <objects>
                 <viewController title="USDCalendarView" id="Q9H-Q2-LHG" customClass="USDCalendarController" customModule="USDToday" customModuleProvider="target" sceneMemberID="viewController">
@@ -198,7 +198,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyo-04-BLk">
+                                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyo-04-BLk">
                                                                             <rect key="frame" x="38" y="38" width="40" height="40"/>
                                                                             <color key="backgroundColor" red="0.0" green="0.4549019608" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
@@ -212,9 +212,9 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </view>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh2-65-N2b">
-                                                                            <rect key="frame" x="37" y="47.5" width="42" height="21"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <nil key="textColor"/>
+                                                                            <rect key="frame" x="36.5" y="47.5" width="43.5" height="21"/>
+                                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -234,8 +234,8 @@
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>
-                                                            <outlet property="dataSource" destination="Q9H-Q2-LHG" id="OeW-XQ-Dx0"/>
-                                                            <outlet property="delegate" destination="Q9H-Q2-LHG" id="m9t-56-YKB"/>
+                                                            <outlet property="ibCalendarDataSource" destination="Q9H-Q2-LHG" id="E09-h2-kWA"/>
+                                                            <outlet property="ibCalendarDelegate" destination="Q9H-Q2-LHG" id="LkH-Og-w2j"/>
                                                         </connections>
                                                     </collectionView>
                                                 </subviews>
@@ -292,7 +292,7 @@
             </objects>
             <point key="canvasLocation" x="1220" y="-244.22788605697153"/>
         </scene>
-        <!--MyCalendarView-->
+        <!--Ib Calendar Data Source-->
         <scene sceneID="zwo-qm-k0B">
             <objects>
                 <viewController title="MyCalendarView" id="mqp-83-3Zv" customClass="MyCalendarController" customModule="USDToday" customModuleProvider="target" sceneMemberID="viewController">
@@ -398,20 +398,6 @@
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
-                                                <view key="backgroundView" contentMode="scaleToFill" id="X4k-en-iqL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.4549019608" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="Pip-NP-KW8"/>
-                                                        <constraint firstAttribute="height" constant="30" id="tPm-At-LNN"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="20"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomCell" id="gUK-wc-qVC" customClass="CustomCell" customModule="USDToday" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
@@ -420,7 +406,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuO-k4-W81">
+                                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuO-k4-W81">
                                                                     <rect key="frame" x="38" y="37.5" width="40" height="40"/>
                                                                     <color key="backgroundColor" red="0.0" green="0.4549019608" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
@@ -436,7 +422,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtx-8T-Glz">
                                                                     <rect key="frame" x="37" y="47.5" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -454,8 +440,8 @@
                                                     </collectionViewCell>
                                                 </cells>
                                                 <connections>
-                                                    <outlet property="dataSource" destination="mqp-83-3Zv" id="EsD-Ym-0Bj"/>
-                                                    <outlet property="delegate" destination="mqp-83-3Zv" id="gkY-Es-I2b"/>
+                                                    <outlet property="ibCalendarDataSource" destination="mqp-83-3Zv" id="F13-qa-lb9"/>
+                                                    <outlet property="ibCalendarDelegate" destination="mqp-83-3Zv" id="P9i-aH-Y2i"/>
                                                 </connections>
                                             </collectionView>
                                         </subviews>

@@ -20,6 +20,8 @@ class USDCalendarController: UIViewController {
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var month: UILabel!
     
+    // dark blue #123b7c  #003B6F
+    // light blue #0074C8
     let outsideMonthColor = UIColor.gray
     let monthColor = UIColor.white
     let selectedMonthColor = UIColor.black
@@ -33,7 +35,6 @@ class USDCalendarController: UIViewController {
     @IBAction func allEventsButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "MasterSegue", sender: self)
     }
-    
     
     func setUpCalendarView(){
         // set up calendar spacing
@@ -121,7 +122,8 @@ extension USDCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarV
         return parameters
     }
     
-    
+}
+extension USDCalendarController: JTAppleCalendarViewDelegate {
     // Display the cell
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
@@ -146,5 +148,16 @@ extension USDCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarV
         setupViewsOfCalendar(from: visibleDates)
     }
  
+}
+
+extension UIColor{
+    convenience init(colorWithHexValue value: Int, alpha: CGFloat = 1.0){
+        self.init(
+            darkBlue: CGFloat((value & 0x003B6F) >> 16) / 255.0,
+            lightBlue: CGFloat((value & 0x0074C8) >> 16) / 255.0,
+            alpha: alpha
+        )
+    }
+    
 }
 
