@@ -14,7 +14,6 @@ class MyCalendarController: UIViewController {
     
     var daySelected = ""
     
-    
     let formatter = DateFormatter()
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var year: UILabel!
@@ -107,10 +106,11 @@ class MyCalendarController: UIViewController {
 }
 
 // JTAppleCalendar stuff
-extension MyCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
+extension MyCalendarController: JTAppleCalendarViewDataSource {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         let customCell = cell as! CustomCell
         configureCell(view: customCell, cellState: cellState)
+        
     }
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters{
@@ -122,10 +122,12 @@ extension MyCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarVi
         let endDate = formatter.date(from: "2019 01 01")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
+        print("configured calendar\n")
         return parameters
     }
     
-    
+}
+extension MyCalendarController: JTAppleCalendarViewDelegate {
     // Display the cell
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
@@ -149,8 +151,6 @@ extension MyCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarVi
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo){
         setupViewsOfCalendar(from: visibleDates)
     }
- 
+    
 }
-
-
 

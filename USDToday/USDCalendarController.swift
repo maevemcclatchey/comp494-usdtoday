@@ -23,7 +23,7 @@ class USDCalendarController: UIViewController {
     // dark blue #123b7c  #003B6F
     // light blue #0074C8
     let outsideMonthColor = UIColor.gray
-    let monthColor = UIColor.white
+    let monthColor = UIColor.black
     let selectedMonthColor = UIColor.black
     let currentDateSelectedViewColor = UIColor.blue
     

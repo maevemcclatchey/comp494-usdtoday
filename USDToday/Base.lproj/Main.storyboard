@@ -102,18 +102,18 @@
                                         <rect key="frame" x="0.0" y="64" width="375" height="397"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Uen-im-Bvc">
-                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="49.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="73" height="49.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBN-rw-KCq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="73" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv2-EG-BZ8">
-                                                        <rect key="frame" x="0.0" y="20.5" width="67.5" height="29"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                        <nil key="textColor"/>
+                                                        <rect key="frame" x="0.0" y="20.5" width="73" height="29"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -221,8 +221,6 @@
                                                                 </view>
                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="Fyo-04-BLk" firstAttribute="centerX" secondItem="feY-fC-y8w" secondAttribute="centerX" id="KG2-Az-lbe"/>
-                                                                    <constraint firstItem="Fyo-04-BLk" firstAttribute="centerY" secondItem="feY-fC-y8w" secondAttribute="centerY" id="QtB-xH-Qde"/>
                                                                     <constraint firstItem="Fyo-04-BLk" firstAttribute="centerY" secondItem="feY-fC-y8w" secondAttribute="centerY" id="VKj-th-0ih"/>
                                                                     <constraint firstItem="Fyo-04-BLk" firstAttribute="centerX" secondItem="feY-fC-y8w" secondAttribute="centerX" id="uq7-Jy-bAH"/>
                                                                     <constraint firstItem="uh2-65-N2b" firstAttribute="centerX" secondItem="feY-fC-y8w" secondAttribute="centerX" id="vKV-Pk-aVj"/>
@@ -230,7 +228,7 @@
                                                                 </constraints>
                                                                 <connections>
                                                                     <outlet property="dateLabel" destination="uh2-65-N2b" id="sG5-sB-eAK"/>
-                                                                    <outlet property="selectedView" destination="Fyo-04-BLk" id="THJ-EU-FcS"/>
+                                                                    <outlet property="selectedView" destination="Fyo-04-BLk" id="CVc-6F-vrn"/>
                                                                 </connections>
                                                             </collectionViewCell>
                                                         </cells>
@@ -256,7 +254,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.0" green="0.23137254900000001" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="BQK-fN-sIw" firstAttribute="trailing" secondItem="FMs-se-Mw7" secondAttribute="trailing" id="5BQ-i9-8hq"/>
                                     <constraint firstItem="FMs-se-Mw7" firstAttribute="top" secondItem="BQK-fN-sIw" secondAttribute="top" id="YkO-iG-4ag"/>
@@ -265,7 +263,6 @@
                                 <viewLayoutGuide key="safeArea" id="BQK-fN-sIw"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Da0-N9-pN4" firstAttribute="leading" secondItem="0de-DL-Dne" secondAttribute="leading" id="B1Q-Ow-E4b"/>
                             <constraint firstAttribute="trailing" secondItem="Da0-N9-pN4" secondAttribute="trailing" id="H3M-eM-Afc"/>
@@ -301,6 +298,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EuJ-CF-fxW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="hDN-T6-Kzd">
                                 <rect key="frame" x="0.0" y="64" width="375" height="397.5"/>
                                 <subviews>
@@ -436,8 +437,8 @@
                                                             <constraint firstItem="jtx-8T-Glz" firstAttribute="centerY" secondItem="gUK-wc-qVC" secondAttribute="centerY" id="ySc-ok-QIe"/>
                                                         </constraints>
                                                         <connections>
-                                                            <outlet property="dateLabel" destination="jtx-8T-Glz" id="uBV-rf-s7I"/>
-                                                            <outlet property="selectedView" destination="JuO-k4-W81" id="gZx-jb-qjK"/>
+                                                            <outlet property="dateLabel" destination="jtx-8T-Glz" id="BFh-3y-qWQ"/>
+                                                            <outlet property="selectedView" destination="JuO-k4-W81" id="e3s-i9-myp"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -466,14 +467,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hDN-T6-Kzd" firstAttribute="trailing" secondItem="rbc-YF-CW3" secondAttribute="trailing" id="2Jj-vC-e7k"/>
+                            <constraint firstItem="EuJ-CF-fxW" firstAttribute="top" secondItem="rbc-YF-CW3" secondAttribute="top" id="5e0-lJ-mck"/>
+                            <constraint firstItem="EuJ-CF-fxW" firstAttribute="leading" secondItem="rbc-YF-CW3" secondAttribute="leading" id="8dS-KA-ySE"/>
+                            <constraint firstItem="EuJ-CF-fxW" firstAttribute="bottom" secondItem="rbc-YF-CW3" secondAttribute="bottom" id="LdA-ZL-k85"/>
                             <constraint firstItem="hDN-T6-Kzd" firstAttribute="leading" secondItem="rbc-YF-CW3" secondAttribute="leading" id="a6M-TS-Ex3"/>
+                            <constraint firstItem="EuJ-CF-fxW" firstAttribute="centerY" secondItem="1th-TW-k8e" secondAttribute="centerY" id="emh-2y-Cgn"/>
                             <constraint firstItem="hDN-T6-Kzd" firstAttribute="centerX" secondItem="1th-TW-k8e" secondAttribute="centerX" id="fuk-xc-4jY"/>
+                            <constraint firstItem="EuJ-CF-fxW" firstAttribute="centerX" secondItem="1th-TW-k8e" secondAttribute="centerX" id="gy4-2U-bCn"/>
+                            <constraint firstItem="EuJ-CF-fxW" firstAttribute="trailing" secondItem="rbc-YF-CW3" secondAttribute="trailing" id="jWM-bm-dbf"/>
                             <constraint firstItem="hDN-T6-Kzd" firstAttribute="top" secondItem="rbc-YF-CW3" secondAttribute="top" id="wtv-KI-kVy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rbc-YF-CW3"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Calendar" id="uIw-oV-N7Z">
-                        <barButtonItem key="rightBarButtonItem" title="All Events" id="EZ0-4F-QBG">
+                        <barButtonItem key="rightBarButtonItem" title="My Events" id="EZ0-4F-QBG">
                             <connections>
                                 <action selector="allEventsButtonPressed:" destination="mqp-83-3Zv" id="mec-7g-AyT"/>
                                 <segue destination="vWk-87-k6W" kind="show" identifier="MasterSegue" id="Wgy-7i-TZV"/>
@@ -490,7 +497,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDI-WF-gLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2278" y="-244"/>
+            <point key="canvasLocation" x="2277.5999999999999" y="-244.22788605697153"/>
         </scene>
         <!--USD Today-->
         <scene sceneID="edW-57-g9k">
@@ -1033,8 +1040,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2Sz-UX-hf3"/>
-        <segue reference="glZ-hB-HvM"/>
+        <segue reference="Eiz-Eb-8Uc"/>
+        <segue reference="SpO-B6-Gmw"/>
         <segue reference="Wgy-7i-TZV"/>
     </inferredMetricsTieBreakers>
 </document>
