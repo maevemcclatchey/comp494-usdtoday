@@ -38,6 +38,7 @@ class USDCalendarController: UIViewController {
         // set up labels
         calendarView.visibleDates{ (visibleDates) in
             self.setupViewsOfCalendar(from: visibleDates)
+            print("set up calendar view\n")
         }
     }
     
@@ -71,6 +72,7 @@ class USDCalendarController: UIViewController {
     
     func configureCell(view: JTAppleCell?, cellState: CellState) {
         guard let myCustomCell = view as? CustomCell  else { return }
+        myCustomCell.dateLabel.text = cellState.text
         handleCellTextColor(view: myCustomCell, cellState: cellState)
         handleCellSelected(view: myCustomCell, cellState: cellState)
     }
@@ -102,6 +104,7 @@ extension USDCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarV
         let endDate = formatter.date(from: "2019 01 01")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
+        print("configured calendar\n")
         return parameters
     }
     
@@ -129,7 +132,7 @@ extension USDCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarV
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
     }
- 
+ */
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo){
         setupViewsOfCalendar(from: visibleDates)
     }

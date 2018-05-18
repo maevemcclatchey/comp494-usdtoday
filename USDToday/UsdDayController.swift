@@ -13,7 +13,6 @@ class UsdDayController: ViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
-    let events = [Event(title: "Movie Night", description:"Coco", isInMyCalendar: false, date:"May 05 7:30 pm - 9 pm", eventType: "Greek Life")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +34,14 @@ class UsdDayController: ViewController, UITableViewDelegate, UITableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "USDEventSegue"{
             let selectedEvent = segue.destination as! EventDetailController
-            
-            selectedEvent.title = "" // TODO: set title to selected event
+            let indexPath = tableView.indexPathForSelectedRow!
+            selectedEvent.title = EventsSingleton.shared.eventsList[indexPath.row].title
+            selectedEvent.eventView.text = EventsSingleton.shared.eventsList[indexPath.row].description
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        return EventsSingleton.shared.eventsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,7 +50,7 @@ class UsdDayController: ViewController, UITableViewDelegate, UITableViewDataSour
             fatalError("Could not dequeue a cell")
         }
         
-        let event = events[indexPath.row]
+        let event = EventsSingleton.shared.eventsList[indexPath.row]
         cell.title?.text? = event.title
         cell.detail?.text? = event.description
         

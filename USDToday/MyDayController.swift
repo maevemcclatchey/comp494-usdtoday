@@ -12,9 +12,6 @@ class MyDayController: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     @IBOutlet weak var tableView: UITableView!
     
-    let events = [Event(title: "Movie Night", description:"Coco", isInMyCalendar: true, date:"May 05 7:30 pm - 9 pm", eventType: "Greek Life")]
-    
-    //let events = [Event]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,19 +33,21 @@ class MyDayController: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MyEventSegue"{
             let selectedEvent = segue.destination as! EventDetailController
-            selectedEvent.navigationItem.title = "" //TODO: set title to selected cell title
+            let indexPath = tableView.indexPathForSelectedRow!
+            selectedEvent.title = EventsSingleton.shared.eventsList[indexPath.row].title
+            selectedEvent.eventView.text = EventsSingleton.shared.eventsList[indexPath.row].description
         }
     }
     
       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        return EventsSingleton.shared.eventsList.count
     }
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventCellIdentifier") as? EventCell else {
             fatalError("Could not dequeue a cell")
         }
         
-        let event = events[indexPath.row]
+        let event = EventsSingleton.shared.eventsList[indexPath.row]
         cell.title?.text? = event.title
         cell.detail?.text? = event.description
        
