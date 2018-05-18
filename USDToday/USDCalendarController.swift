@@ -12,16 +12,10 @@ import JTAppleCalendar
 
 class USDCalendarController: UIViewController {
     
-    
     var daySelected = ""
-    @IBOutlet weak var day1Button: UIButton!
-    
-    @IBOutlet weak var day2Button: UIButton!
-    
-    @IBOutlet weak var day3Button: UIButton!
     
     let formatter = DateFormatter()
-    //@IBOutlet weak var calendarView: JTAppleCalendarView!
+    @IBOutlet weak var calendarView: JTAppleCalendarView!
     
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var month: UILabel!
@@ -33,17 +27,23 @@ class USDCalendarController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // setUpCalendarView()
+        setUpCalendarView()
     }
-    /*
+    
+    @IBAction func allEventsButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "MasterSegue", sender: self)
+    }
+    
+    
     func setUpCalendarView(){
         // set up calendar spacing
-       // calendarView.minimumLineSpacing = 0
-      //  calendarView.minimumInteritemSpacing = 0
+        calendarView.minimumLineSpacing = 0
+        calendarView.minimumInteritemSpacing = 0
         
         // set up labels
         calendarView.visibleDates{ (visibleDates) in
             self.setupViewsOfCalendar(from: visibleDates)
+            print("set up calendar view\n")
         }
     }
     
@@ -82,10 +82,11 @@ class USDCalendarController: UIViewController {
     
     func configureCell(view: JTAppleCell?, cellState: CellState) {
         guard let myCustomCell = view as? CustomCell  else { return }
+        myCustomCell.dateLabel.text = cellState.text
         handleCellTextColor(view: myCustomCell, cellState: cellState)
         handleCellSelected(view: myCustomCell, cellState: cellState)
     }
-    */
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -96,26 +97,19 @@ class USDCalendarController: UIViewController {
             let selectedDay = segue.destination as! UsdDayController
             selectedDay.navigationItem.title = daySelected
         }
+        if segue.identifier == "MasterSegue" {
+            let destination = segue.destination as! MasterTableViewController
+        }
     }
-    @IBAction func day1ButtonPressed(_ sender: Any) {
-        daySelected = "Day 1"
-        performSegue(withIdentifier: "usdSegue", sender: self)
-    }
-    @IBAction func day2ButtonPressed(_ sender: Any) {
-        daySelected = "Day 2"
-        performSegue(withIdentifier: "usdSegue", sender: self)
-    }
-    @IBAction func day3ButtonPressed(_ sender: Any) {
-        daySelected = "Day 3"
-        performSegue(withIdentifier: "usdSegue", sender: self)
-    }
+    
     
 }
 
 // JTAppleCalendar stuff
 extension USDCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
-       // configureCell(view: cell, cellState: cellState)
+        configureCell(view: cell, cellState: cellState)
+        
     }
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters{
@@ -127,6 +121,7 @@ extension USDCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarV
         let endDate = formatter.date(from: "2019 01 01")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
+        print("configured calendar\n")
         return parameters
     }
     
@@ -153,10 +148,10 @@ extension USDCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarV
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
     }
- 
+ */
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo){
         setupViewsOfCalendar(from: visibleDates)
     }
-   */
+ 
 }
 

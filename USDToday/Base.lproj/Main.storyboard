@@ -11,6 +11,67 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Master List-->
+        <scene sceneID="wrp-iQ-pM9">
+            <objects>
+                <tableViewController title="Master List" id="vWk-87-k6W" customClass="MasterTableViewController" customModule="USDToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="L4q-3R-rc9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="masterCell" id="u0q-a7-d6I" customClass="EventCell" customModule="USDToday" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u0q-a7-d6I" id="svQ-jF-qVC">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="CrJ-jf-Te1">
+                                            <rect key="frame" x="25" y="8" width="88" height="27.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iS7-xn-4nq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="47.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO5-dx-4rZ">
+                                                    <rect key="frame" x="0.0" y="16" width="88" height="11.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="CrJ-jf-Te1" secondAttribute="bottom" constant="8" id="Eqc-q3-HFE"/>
+                                        <constraint firstItem="CrJ-jf-Te1" firstAttribute="leading" secondItem="svQ-jF-qVC" secondAttribute="leading" constant="25" id="axe-we-M3f"/>
+                                        <constraint firstItem="CrJ-jf-Te1" firstAttribute="top" secondItem="svQ-jF-qVC" secondAttribute="top" constant="8" id="o4p-P2-3mg"/>
+                                        <constraint firstItem="CrJ-jf-Te1" firstAttribute="centerY" secondItem="svQ-jF-qVC" secondAttribute="centerY" id="yBe-qi-fdX"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detail" destination="NO5-dx-4rZ" id="FJe-Dl-AXw"/>
+                                    <outlet property="title" destination="iS7-xn-4nq" id="zBF-pj-sC4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vWk-87-k6W" id="MqX-JW-tjM"/>
+                            <outlet property="delegate" destination="vWk-87-k6W" id="wCb-7L-iJ8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="All Events" id="8fi-vN-mOV"/>
+                    <connections>
+                        <segue destination="WP1-UT-yQa" kind="show" identifier="DetailSegue" id="glZ-hB-HvM"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVn-fJ-eoL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="228" y="562"/>
+        </scene>
         <!--USDCalendarView-->
         <scene sceneID="l7C-vi-KZ3">
             <objects>
@@ -132,7 +193,10 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </view>
+                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="uh2-65-N2b" firstAttribute="centerY" secondItem="feY-fC-y8w" secondAttribute="centerY" id="9iI-xv-fU5"/>
+                                                                    <constraint firstItem="uh2-65-N2b" firstAttribute="centerX" secondItem="feY-fC-y8w" secondAttribute="centerX" id="A5t-P2-fmb"/>
                                                                     <constraint firstItem="uh2-65-N2b" firstAttribute="centerX" secondItem="feY-fC-y8w" secondAttribute="centerX" id="vKV-Pk-aVj"/>
                                                                     <constraint firstItem="uh2-65-N2b" firstAttribute="centerY" secondItem="feY-fC-y8w" secondAttribute="centerY" id="xPe-AD-4Om"/>
                                                                 </constraints>
@@ -161,7 +225,6 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Uen-im-Bvc" firstAttribute="leading" secondItem="FMs-se-Mw7" secondAttribute="leading" constant="10" id="A1k-Zo-TNA"/>
                                             <constraint firstItem="7dW-qk-FpA" firstAttribute="leading" secondItem="FMs-se-Mw7" secondAttribute="leading" id="BwM-Rq-Fph"/>
                                             <constraint firstAttribute="trailing" secondItem="7dW-qk-FpA" secondAttribute="trailing" id="n9f-UZ-1Bb"/>
                                             <constraint firstAttribute="height" constant="397" id="uqM-iQ-7ml"/>
@@ -186,8 +249,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0de-DL-Dne"/>
                     </view>
-                    <navigationItem key="navigationItem" title="USD Calendar" id="OLs-7P-pCa"/>
+                    <navigationItem key="navigationItem" title="USD Calendar" id="OLs-7P-pCa">
+                        <barButtonItem key="rightBarButtonItem" title="All Events" id="m8F-n3-lbs">
+                            <connections>
+                                <action selector="allEventsButtonPressed:" destination="Q9H-Q2-LHG" id="rQp-cB-905"/>
+                                <segue destination="vWk-87-k6W" kind="show" identifier="MasterSegue" id="9qZ-N8-1ZB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="calendarView" destination="tf2-7a-ZvG" id="9sM-Yt-3tx"/>
                         <outlet property="month" destination="uv2-EG-BZ8" id="J1N-8v-UIW"/>
                         <outlet property="year" destination="BBN-rw-KCq" id="f5L-UH-jTZ"/>
                         <segue destination="9ag-XK-cuv" kind="show" identifier="usdSegue" id="QA3-6d-0gW"/>
@@ -195,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kz8-6Z-iLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="-244.22788605697153"/>
+            <point key="canvasLocation" x="1220" y="-244"/>
         </scene>
         <!--MyCalendarView-->
         <scene sceneID="zwo-qm-k0B">
@@ -211,13 +282,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N60-WA-lef">
                                         <rect key="frame" x="0.0" y="0.0" width="67.5" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc4-pg-Br3">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc4-pg-Br3">
                                                 <rect key="frame" x="0.0" y="0.0" width="67.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5W-N8-Uxt">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5W-N8-Uxt">
                                                 <rect key="frame" x="0.0" y="20.5" width="67.5" height="29.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <nil key="textColor"/>
@@ -318,6 +389,7 @@
                                                                 </label>
                                                             </subviews>
                                                         </view>
+                                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="jtx-8T-Glz" firstAttribute="centerX" secondItem="gUK-wc-qVC" secondAttribute="centerX" id="FPN-wr-qHA"/>
                                                             <constraint firstItem="jtx-8T-Glz" firstAttribute="centerY" secondItem="gUK-wc-qVC" secondAttribute="centerY" id="ySc-ok-QIe"/>
@@ -349,7 +421,6 @@
                                 <constraints>
                                     <constraint firstItem="F7M-hn-07m" firstAttribute="leading" secondItem="hDN-T6-Kzd" secondAttribute="leading" id="7KQ-qn-DvH"/>
                                     <constraint firstAttribute="height" constant="397.5" id="ACo-9e-hWZ"/>
-                                    <constraint firstItem="N60-WA-lef" firstAttribute="leading" secondItem="hDN-T6-Kzd" secondAttribute="leading" constant="10" id="p0h-lj-89l"/>
                                     <constraint firstAttribute="trailing" secondItem="F7M-hn-07m" secondAttribute="trailing" id="zNw-ag-JBA"/>
                                 </constraints>
                             </stackView>
@@ -363,8 +434,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rbc-YF-CW3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Calendar" id="uIw-oV-N7Z"/>
+                    <navigationItem key="navigationItem" title="My Calendar" id="uIw-oV-N7Z">
+                        <barButtonItem key="rightBarButtonItem" title="All Events" id="EZ0-4F-QBG">
+                            <connections>
+                                <action selector="allEventsButtonPressed:" destination="mqp-83-3Zv" id="mec-7g-AyT"/>
+                                <segue destination="vWk-87-k6W" kind="show" identifier="MasterSegue" id="Wgy-7i-TZV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="calendarView" destination="jan-xc-2MX" id="uhn-Jd-Y8V"/>
                         <outlet property="month" destination="Y5W-N8-Uxt" id="20o-TF-Cke"/>
                         <outlet property="year" destination="Xc4-pg-Br3" id="IjY-f9-bnK"/>
                         <segue destination="447-BC-N2E" kind="show" identifier="mySegue" id="uJP-0m-WfA"/>
@@ -373,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDI-WF-gLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2277.5999999999999" y="-244.22788605697153"/>
+            <point key="canvasLocation" x="2278" y="-244"/>
         </scene>
         <!--USD Today-->
         <scene sceneID="edW-57-g9k">
@@ -410,6 +489,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detail" destination="a6J-vD-QiD" id="Qjg-8R-7m6"/>
+                                            <outlet property="title" destination="NXy-un-KeL" id="zAm-Js-VtV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -432,7 +515,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfF-tF-ro8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="622.93853073463276"/>
+            <point key="canvasLocation" x="1564" y="609"/>
         </scene>
         <!--My Day-->
         <scene sceneID="Mph-JJ-LeF">
@@ -469,6 +552,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detail" destination="h9g-Rp-G89" id="ITs-wl-gNt"/>
+                                            <outlet property="title" destination="3TB-eS-vDM" id="ZE9-OD-S7I"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -489,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2x-Oi-UGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2278" y="610"/>
+            <point key="canvasLocation" x="2616.8000000000002" y="609.44527736131943"/>
         </scene>
         <!--New Event View Controller-->
         <scene sceneID="cTX-K6-CFJ">
@@ -668,7 +755,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tef-d1-gys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3149.5999999999999" y="608.54572713643188"/>
+            <point key="canvasLocation" x="3488.8000000000002" y="608.54572713643188"/>
         </scene>
         <!--EventDetail-->
         <scene sceneID="t0Z-kI-d7i">
@@ -845,7 +932,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4h-g4-lN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3924" y="-244"/>
+            <point key="canvasLocation" x="4263.1999999999998" y="-244.22788605697153"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="a6y-qE-IRz">
@@ -905,8 +992,27 @@
             </objects>
             <point key="canvasLocation" x="2279" y="-1222"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WuL-NE-lw2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8CU-DA-DTH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u5z-Yj-qQ8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vWk-87-k6W" kind="relationship" relationship="rootViewController" id="yw6-uw-scV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Jb-HP-2GE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-834" y="562"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bjG-cS-Yzd"/>
+        <segue reference="glZ-hB-HvM"/>
+        <segue reference="9qZ-N8-1ZB"/>
     </inferredMetricsTieBreakers>
 </document>
