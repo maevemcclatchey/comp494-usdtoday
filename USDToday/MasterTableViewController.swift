@@ -27,6 +27,11 @@ class MasterTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func addEventButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "addEvent", sender: self)
+    }
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
