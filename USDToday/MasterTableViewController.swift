@@ -31,6 +31,9 @@ class MasterTableViewController: UITableViewController {
         performSegue(withIdentifier: "addEvent", sender: self)
     }
     
+    @IBAction func unwindToMaster(_ sender: UIStoryboardSegue){
+        
+    }
     
     // MARK: - Table view data source
 

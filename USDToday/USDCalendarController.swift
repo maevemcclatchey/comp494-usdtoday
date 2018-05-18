@@ -92,7 +92,8 @@ class USDCalendarController: UIViewController {
             selectedDay.navigationItem.title = daySelected
         }
         if segue.identifier == "MasterSegue" {
-            let destination = segue.destination as! MasterTableViewController
+            // let destination
+            _ = segue.destination as! MasterTableViewController
         }
     }
     
@@ -102,7 +103,8 @@ class USDCalendarController: UIViewController {
 // JTAppleCalendar stuff
 extension USDCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
-        configureCell(view: cell, cellState: cellState)
+        let customCell = cell as! CustomCell
+        configureCell(view: customCell, cellState: cellState)
         
     }
     
@@ -123,11 +125,7 @@ extension USDCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarV
     // Display the cell
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
-        
-        cell.dateLabel.text = cellState.text
-        
-        handleCellSelected(view: cell, cellState: cellState)
-        handleCellTextColor(view: cell, cellState: cellState)
+        configureCell(view: cell, cellState: cellState)
         
         return cell
     }
@@ -143,7 +141,7 @@ extension USDCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarV
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
     }
- */
+ 
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo){
         setupViewsOfCalendar(from: visibleDates)
     }

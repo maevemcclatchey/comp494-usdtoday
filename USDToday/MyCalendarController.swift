@@ -105,7 +105,8 @@ class MyCalendarController: UIViewController {
 // JTAppleCalendar stuff
 extension MyCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
-        configureCell(view: cell, cellState: cellState)
+        let customCell = cell as! CustomCell
+        configureCell(view: customCell, cellState: cellState)
     }
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters{
@@ -124,10 +125,7 @@ extension MyCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarVi
     // Display the cell
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
-        
-        cell.dateLabel.text = cellState.text
-        handleCellSelected(view: cell, cellState: cellState)
-        handleCellTextColor(view: cell, cellState: cellState)
+        configureCell(view: cell, cellState: cellState)
         
         return cell
     }
@@ -149,4 +147,8 @@ extension MyCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarVi
     }
  
 }
+
+// dark blue #123b7c  #003B6F
+
+// light blue #0074C8
 
