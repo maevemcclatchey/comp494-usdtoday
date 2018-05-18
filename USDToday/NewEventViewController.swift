@@ -75,7 +75,7 @@ class NewEventViewController: UITableViewController, UIPickerViewDelegate, UIPic
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 5
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,6 +90,7 @@ class NewEventViewController: UITableViewController, UIPickerViewDelegate, UIPic
         } else {
             EventsSingleton.shared.update(event: newEvent, isInMyCalendar: false)
         }
+        
         
     }
     
