@@ -9,13 +9,12 @@
 import Foundation
 
 struct Event: Codable, Equatable{
+    
     var title: String
     var description: String
     var isInMyCalendar: Bool = false
     var date: String
     var eventType: String
-    
-    
     
     init(title: String, description: String, isInMyCalendar: Bool, date: String, eventType: String) {
         self.title = title
@@ -29,30 +28,47 @@ struct Event: Codable, Equatable{
         return lhs.title == rhs.title
     }
     
-    public func getDummyData() -> [Event] {
-        let events = [Event(title: "Movie Night", description:"Coco", isInMyCalendar: true, date:"May 05 7:30 pm - 9 pm", eventType: "Greek Life"), Event(title: "Engineering Showcase", description:"Presentations of senior projects completed by Engineering and Computer Science students", isInMyCalendar: true, date:"May 11 2:30 pm - 5 pm", eventType: "Academics"), Event(title: "CS Showcase", description: "Senior Project Presentations", isInMyCalendar: true, date:"May 11 2:30pm - 5:30pm", eventType: "Academic")]
-        
-        return events
+    
+    /*
+    // store and retrieve items from disk
+    static func loadEvents() -> [Event]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Event.ArchiveURL.path) as? [Event]
     }
     
-    static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let archiveURL = documentsDirectory.appendingPathComponent("event_test").appendingPathExtension("plist")
-    
-    static func saveToFile(_ events: [Event]){
-        let propertyListEncoder = PropertyListEncoder()
-        let encodedEvent = try? propertyListEncoder.encode(events)
-        
-        try? encodedEvent?.write(to: archiveURL, options: .noFileProtection)
+    static func saveEvents(_ events: [Event]) {
+        NSKeyedArchiver.archiveRootObject(events, toFile: Event.ArchiveURL.path)
     }
     
-    static func loadFromFile()-> [Event]{
-        let propertyListDecoder = PropertyListDecoder()
-        if let retrievedEventData = try? Data(contentsOf: archiveURL),
-            let decodedEvent = try? propertyListDecoder.decode(Array<Event>.self, from: retrievedEventData){
-            return decodedEvent
+    struct PropertyKey {
+        static let title = "title"
+        static let isInMyCalendar = "isInMyCalendar"
+        static let date = "date"
+        static let eventType = "eventType"
+        static let description = "description"
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        
+        guard let title = aDecoder.decodeObject(forKey: PropertyKey.title) as? String,
+            let date = aDecoder.decodeObject(forKey: PropertyKey.date) as? String else {
+                return nil
         }
-        return []
+        
+        let isInMyCalendar = aDecoder.decodeBool(forKey: PropertyKey.isInMyCalendar)
+        let description = aDecoder.decodeObject(forKey: PropertyKey.description) as? String
+        let eventType = aDecoder.decodeObject(forKey: PropertyKey.eventType) as? String
+
+        self.init(title: title, description: description!, isInMyCalendar: isInMyCalendar, date: date, eventType: eventType!)
     }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(title, forKey: PropertyKey.title)
+        aCoder.encode(isInMyCalendar, forKey: PropertyKey.isInMyCalendar)
+        aCoder.encode(date, forKey: PropertyKey.date)
+        aCoder.encode(eventType, forKey: PropertyKey.eventType)
+        aCoder.encode(description, forKey: PropertyKey.description)
+    }
+    */
 }
 
 
