@@ -56,17 +56,12 @@ class USDCalendarController: UIViewController {
         }
     }
     
-    func handleCellTextColor(view: JTAppleCell?, cellState: CellState){
+    func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
         guard let validCell = view as? CustomCell else { return }
-        
-        if cellState.isSelected{
-            validCell.dateLabel.textColor = selectedMonthColor
-        } else{
-            if cellState.dateBelongsTo == .thisMonth{
-                validCell.dateLabel.textColor = monthColor
-            } else {
-                validCell.dateLabel.textColor = outsideMonthColor
-            }
+        if cellState.isSelected {
+            validCell.selectedView.isHidden = false
+        } else {
+            validCell.selectedView.isHidden = true
         }
     }
     
@@ -89,7 +84,6 @@ class USDCalendarController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -131,12 +125,13 @@ extension USDCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarV
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
         
         cell.dateLabel.text = cellState.text
-       // handleCellSelected(view: cell, cellState: cellState)
-       // handleCellTextColor(view: cell, cellState: cellState)
+        
+        handleCellSelected(view: cell, cellState: cellState)
+        handleCellTextColor(view: cell, cellState: cellState)
         
         return cell
     }
-    /*
+    
     // select method
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState){
         handleCellSelected(view: cell, cellState: cellState)
