@@ -60,9 +60,13 @@ class USDCalendarController: UIViewController {
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
         guard let validCell = view as? CustomCell else { return }
         if cellState.isSelected {
-            validCell.selectedView.isHidden = false
+            validCell.dateLabel.textColor = selectedMonthColor
         } else {
-            validCell.selectedView.isHidden = true
+            if cellState.dateBelongsTo == .thisMonth{
+                validCell.dateLabel.textColor = monthColor
+            } else {
+                validCell.dateLabel.textColor = outsideMonthColor
+            }
         }
     }
     
@@ -102,7 +106,7 @@ class USDCalendarController: UIViewController {
 }
 
 // JTAppleCalendar stuff
-extension USDCalendarController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
+extension USDCalendarController: JTAppleCalendarViewDataSource {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         let customCell = cell as! CustomCell
         configureCell(view: customCell, cellState: cellState)
@@ -149,7 +153,7 @@ extension USDCalendarController: JTAppleCalendarViewDelegate {
     }
  
 }
-
+/*
 extension UIColor{
     convenience init(colorWithHexValue value: Int, alpha: CGFloat = 1.0){
         self.init(
@@ -160,4 +164,5 @@ extension UIColor{
     }
     
 }
+ */
 

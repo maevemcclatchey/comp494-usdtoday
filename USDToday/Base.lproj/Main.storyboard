@@ -230,6 +230,7 @@
                                                                 </constraints>
                                                                 <connections>
                                                                     <outlet property="dateLabel" destination="uh2-65-N2b" id="sG5-sB-eAK"/>
+                                                                    <outlet property="selectedView" destination="Fyo-04-BLk" id="THJ-EU-FcS"/>
                                                                 </connections>
                                                             </collectionViewCell>
                                                         </cells>
@@ -436,6 +437,7 @@
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="dateLabel" destination="jtx-8T-Glz" id="uBV-rf-s7I"/>
+                                                            <outlet property="selectedView" destination="JuO-k4-W81" id="gZx-jb-qjK"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>

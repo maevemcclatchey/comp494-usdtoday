@@ -59,9 +59,13 @@ class MyCalendarController: UIViewController {
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
         guard let validCell = view as? CustomCell else { return }
         if cellState.isSelected {
-            validCell.selectedView.isHidden = false
+            validCell.dateLabel.textColor = selectedMonthColor
         } else {
-            validCell.selectedView.isHidden = true
+            if cellState.dateBelongsTo == .thisMonth{
+                validCell.dateLabel.textColor = monthColor
+            } else {
+                validCell.dateLabel.textColor = outsideMonthColor
+            }
         }
     }
     
